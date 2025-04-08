@@ -1,22 +1,19 @@
-def get_dictionary(num):
-    n = int(input(f"Enter the number of key-value pairs for Dictionary {num}: "))
-    dictionary = {}
-    for _ in range(n):
-        key = input("Enter key: ")
-        value = input("Enter value: ")
-        dictionary[key] = value
-    return dictionary
+def dict_input():
+    dict1=eval(input("Enter first dictionary : "))
+    dict2=eval(input("Enter second dictionary : "))
+    
+    merge_dict=dict1.copy()
+    for key,value in dict2.items():
+        if key in merge_dict:
+            merge_dict[key]+=value
+        else:
+            merge_dict[key]=value
 
+    
+    
+    print(f"Merged Dictionary : {merge_dict}")
 
-print("Enter values for the first dictionary:")
-dict1 = get_dictionary(1)
-
-print("\nEnter values for the second dictionary:")
-dict2 = get_dictionary(2)
-
-
-merged_dict = {**dict1, **dict2}  # Using dictionary unpacking
-
+dict_input()
 
 print("\nMerged Dictionary:", merged_dict)
 
